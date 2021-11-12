@@ -20,7 +20,7 @@ And now, you are ready to build the API. In this repository has five API with di
 <br></br>
 To build the API, you need to open the Postman and create new Collections
 ![image](https://user-images.githubusercontent.com/91114367/141490323-fe5743c8-6639-42f3-ac27-ab6a8f2f2f8d.png)<br></br>
-You can create new collections in any name, then create new request by clicking the + button on the left of your collection tab
+You can create new collections in any name, then create new request by clicking the + button on the left of your collection tab<br></br>
 ![image](https://user-images.githubusercontent.com/91114367/141490819-10d9db03-fe1d-4581-96f1-96a9121eebf1.png)<br></br>
 Then make sure the request is `GET`, then paste the URL of [List Ticket](https://github.com/fsngpz/technicalTest/blob/main/listticket.php) API that have been cloned to your local server to the text field beside the `GET` drop down.
 ![image](https://user-images.githubusercontent.com/91114367/141491321-529ca041-a21f-4251-b97e-959124dee2ca.png)<br></br>
