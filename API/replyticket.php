@@ -4,8 +4,9 @@
     parse_str(file_get_contents('php://input'), $value);
 
     $tn = $value['TicketNum'];
+    $msg = $value['Message'];
 
-    $query = "UPDATE ticketing SET Status = 'Answered' WHERE TicketNum = '$tn'";
+    $query = "UPDATE ticketing SET Status = 'Answered', Message = '$msg' WHERE TicketNum = '$tn'";
     $sql = mysqli_query($db_connect, $query);
 
     if($sql){
