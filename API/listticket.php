@@ -5,8 +5,12 @@
     if(isset($_GET['Limit']) && isset($_GET['ID'])){
         $Limit = $_GET['Limit'];
         $ID = $_GET['ID'];
-        
-        
+
+        if (empty($Limit) || empty($ID)){
+          echo json_encode ("The value of parameter cannot be empty!");
+          return;
+        }
+
         if (is_numeric($Limit)){
 
             $query = "SELECT * FROM ticketing WHERE ID = '$ID'";
@@ -22,11 +26,11 @@
             }
 
             if($count > 0){
-                $query = "SELECT t.ID, t.TicketNum, t.Subject, t.Message, t.Status, t.Priority, t.Create_Time, 
+                $query = "SELECT t.ID, t.TicketNum, t.Subject, t.Message, t.Status, t.Priority, t.Create_Time,
                 t.Update_Time, t2.History_Time, t2.Message FROM ticketing t INNER JOIN history t2 ON t.ID = t2.ID WHERE t.ID = '$ID' ORDER BY t2.History_Time ASC LIMIT $Limit";
-    
+
                 $sql = mysqli_query($db_connect, $query);
-    
+
                 if($sql){
                     $result = array();
                     while($row = mysqli_fetch_array($sql)){
@@ -41,25 +45,29 @@
                             'Update_Time' => $row['Update_Time'],
                             'History_Time' => $row['History_Time'],
                             'History Message' => $row['Message']
-                            
+
                         ));
                     }
-    
+
                     echo json_encode(array('Data'  => $result));
                 }
             }else{
                 echo json_encode('Ticket ID is not found!');
             }
-            
+
         }else{
             echo json_encode('Please input the value in number!');
         }
 
-    
+
     }elseif (isset($_GET['Limit'])) {
         $Limit = $_GET['Limit'];
-        
-        
+
+        if (empty($Limit)){
+          echo json_encode ("The value of parameter cannot be empty!");
+          return;
+        }
+
         if (is_numeric($Limit)){
             $query = "SELECT * FROM ticketing";
             $sqlID = mysqli_query($db_connect, $query);
@@ -76,7 +84,7 @@
             if($count > 0){
                 $query = "SELECT t.ID, t.TicketNum, t.Subject, t.Message, t.Status, t.Priority FROM ticketing t LIMIT $Limit";
                 $sql = mysqli_query($db_connect, $query);
-    
+
                 if($sql){
                     $result = array();
                     while($row = mysqli_fetch_array($sql)){
@@ -87,16 +95,16 @@
                             'Message' => $row['Message'],
                             'Status' => $row['Status'],
                             'Priority' => $row['Priority']
-                            
+
                         ));
                     }
-    
+
                     echo json_encode(array('Data'  => $result));
                 }
             }else{
                 echo json_encode('There is no ticket at all!');
             }
-            
+
         }else{
             echo json_encode('Please input the value in number!');
         }
@@ -105,6 +113,6 @@
         echo json_encode('The Parameter is not valid. Please input the valid Parameter');
     }
 
-    
+
 
 ?>
