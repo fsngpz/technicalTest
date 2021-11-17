@@ -25,7 +25,7 @@
 
             $query = "DELETE FROM history WHERE ID = '$ID'";
             $sql = mysqli_query($db_connect, $query);
-        
+
             if($sql){
                 echo json_encode(array('Message' => 'Success to delete the ticket'));
             }else{
@@ -34,13 +34,13 @@
         } else {
             echo json_encode('Ticket ID is not found!');
         }
-        
 
-        
+
+
 
     }else{
         echo json_encode('The Parameter is not valid. Please input the valid Parameter');
     }
-    
+
 
 ?>
