@@ -27,9 +27,9 @@ Then make sure the request is `GET`, then paste the URL of [List Ticket](https:/
 ![image](https://user-images.githubusercontent.com/91114367/141491321-529ca041-a21f-4251-b97e-959124dee2ca.png)<br></br>
 In Key parameter, type **Limit** with Value that you like. The number data that will be showed is based on your input Value. In this case, the input Value is two, so there will be two data that shown.
 To run the API, you can click Send button.<br></br>
-In [List Ticket](https://github.com/fsngpz/technicalTest/blob/main/API/listticket.php) API you can track your message by adding the Parameter **ID** and the input Value is the ID Ticket that you want to track the message.
-![image](https://user-images.githubusercontent.com/91114367/142114541-375cd3af-e8ae-4289-a860-414c7ccb33fd.png)
-
+In [List Ticket](https://github.com/fsngpz/technicalTest/blob/main/API/listticket.php) API you can track your message by adding the Parameter **ID** and the input Value is the ID Ticket that you want to track the message. <br></br>
+![image](https://user-images.githubusercontent.com/91114367/142114541-375cd3af-e8ae-4289-a860-414c7ccb33fd.png)<br></br>
+Picture above is the result of function tracking message in [List Ticket](https://github.com/fsngpz/technicalTest/blob/main/API/listticket.php) API. <br></br><br></br>
 ![image](https://user-images.githubusercontent.com/91114367/141491938-3f562e09-8062-4d4b-9648-7b7e070fcad0.png)<br></br>
 The next is to build [Add Ticket](https://github.com/fsngpz/technicalTest/blob/main/API/addticket.php) API. Add new request again, then make sure the request is `POST` after that paste the URL of [Add Ticket](https://github.com/fsngpz/technicalTest/blob/main/listticket.php) API. Make sure you selecting the Body Menu then choose `x-www-form-urlencoded`. As shown picture below
 ![image](https://user-images.githubusercontent.com/91114367/141493008-08782e15-8c7d-44f8-9dbe-f25dbebb726e.png)
